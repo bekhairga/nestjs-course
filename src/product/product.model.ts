@@ -8,7 +8,7 @@ export class ProductModel {
 	calculatedRating: number;
 	description: string;
 	advantages: string;
-	disAdvantages: string;
+	disadvantages: string;
 	categories: string[];
 	tags: string;
 	characteristics: {
