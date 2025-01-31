@@ -44,6 +44,16 @@ describe('AppController (e2e)', () => {
 			});
 	});
 
+	it.only('/review/create (POST), error, class-validator gives 400 error code', async () => {
+		return request(app.getHttpServer())
+			.post('/review/create')
+			.send({
+				...testDto,
+				rating: 7,
+			})
+			.expect(400);
+	});
+
 	it('/review/byProduct/:productId (GET) - success', async () => {
 		return request(app.getHttpServer())
 			.get('/review/byProduct/' + productId)
